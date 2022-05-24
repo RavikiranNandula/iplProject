@@ -1,4 +1,4 @@
-package com.service;
+package com.iplProject;
 
 public class Match {
     int matchId;

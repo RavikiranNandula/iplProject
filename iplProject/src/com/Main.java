@@ -1,6 +1,6 @@
 package com;
-import com.service.Delivery;
-import com.service.Match;
+import com.iplProject.Delivery;
+import com.iplProject.Match;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -300,6 +300,14 @@ public class Main {
             double economy= (double) totalRuns/totalOvers;
             topEconomicalBowlersIn2015.put(key,economy);
         }
+
+        List<Map.Entry<String,Double>> convertedList=new LinkedList<Map.Entry<String, Double>>(topEconomicalBowlersIn2015.entrySet());
+        Collections.sort(convertedList, new Comparator<Map.Entry<String, Double>>() {
+            @Override
+            public int compare(Map.Entry<String, Double> o1, Map.Entry<String, Double> o2) {
+                return o1.getValue().compareTo(o2.getValue());
+            }
+        });
         System.out.println(topEconomicalBowlersIn2015);
     }
 
