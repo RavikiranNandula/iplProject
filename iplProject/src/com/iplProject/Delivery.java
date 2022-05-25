@@ -2,9 +2,9 @@ package com.iplProject;
 
 
 public class Delivery {
-    int matchId;
-    int inning;
-    String battingTeam;
+    private int matchId;
+    private int inning;
+    private String battingTeam;
 
     public int getMatchId() {
         return matchId;
@@ -14,13 +14,13 @@ public class Delivery {
         this.matchId = matchId;
     }
 
-    String bowlingTeam;
-    int over;
-    int ball;
-    String batsMan;
-    String nonStriker;
-    String bowler;
-    int isSuperOver;
+    private String bowlingTeam;
+    private int over;
+    private int ball;
+    private String batsMan;
+    private String nonStriker;
+    private String bowler;
+    private int isSuperOver;
 
 
 
@@ -120,19 +120,19 @@ public class Delivery {
         this.fielder = fielder;
     }
 
-    int wideRuns;
-    int byeRuns;
-    int legByeRuns;
-    int noBallRuns;
-    int penaltyRuns;
-    int batsmanRuns;
+    private int wideRuns;
+    private int byeRuns;
+    private int legByeRuns;
+    private int noBallRuns;
+    private int penaltyRuns;
+    private int batsmanRuns;
 
-    int extraRuns;
+    private int extraRuns;
 
-    int totalRuns;
-    String playerDismissed;
-    String dismissalKind;
-    String fielder;
+    private int totalRuns;
+    private String playerDismissed;
+    private String dismissalKind;
+    private String fielder;
 
     public String getBatsManName() {
         return batsMan;

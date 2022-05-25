@@ -1,8 +1,8 @@
 package com.iplProject;
 
 public class Match {
-    int matchId;
-    String season;
+    private int matchId;
+    private int season;
 
 
     public String getDate() {
@@ -13,14 +13,14 @@ public class Match {
         this.date = date;
     }
 
-    String city;
-    String date;
-    String team1;
-    String team2;
-    String tossWinner;
-    String tossDecision;
-    String result;
-    int dlApplied;
+    private String city;
+    private String date;
+    private String team1;
+    private String team2;
+    private String tossWinner;
+    private String tossDecision;
+    private String result;
+    private int dlApplied;
 
     public int getMatchId() {
         return matchId;
@@ -30,11 +30,11 @@ public class Match {
         this.matchId = matchId;
     }
 
-    public String getSeason() {
+    public int getSeason() {
         return season;
     }
 
-    public void setSeason(String season) {
+    public void setSeason(int season) {
         this.season = season;
     }
 
@@ -150,11 +150,11 @@ public class Match {
         this.umpire2 = umpire2;
     }
 
-    String winner;
-    int winByRuns;
-    int winByWickets;
-    String playerOfMatch;
-    String venue;
-    String umpire1;
-    String umpire2;
+    private String winner;
+    private int winByRuns;
+    private int winByWickets;
+    private String playerOfMatch;
+    private String venue;
+    private String umpire1;
+    private String umpire2;
 }

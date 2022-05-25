@@ -78,7 +78,7 @@ public class Main {
 
                 Match match=new Match();
                 match.setMatchId(Integer.parseInt(matchData[MATCH_MATCH_ID]));
-                match.setSeason((matchData[MATCH_SEASON]));
+                match.setSeason(Integer.parseInt((matchData[MATCH_SEASON])));
                 match.setCity(matchData[MATCH_CITY]);
                 match.setDate((matchData[MATCH_DATE]));
                 match.setTeam1(matchData[MATCH_TEAM_1]);
@@ -180,7 +180,7 @@ public class Main {
     }
 
     private static void findNumberOfMatchesPlayedPerYear(List<Match> matches) {
-        HashMap<String,Integer> numberOfMatchesPerYear= new HashMap<>();
+        HashMap<Integer,Integer> numberOfMatchesPerYear= new HashMap<>();
         for(Match match:matches){
             if(numberOfMatchesPerYear.containsKey(match.getSeason())){
                 numberOfMatchesPerYear.put(match.getSeason(),numberOfMatchesPerYear.get(match.getSeason())+1);
@@ -212,8 +212,8 @@ public class Main {
     private static void findNumberOfExtraRunsConcededPerTeamIn2016(List<Match> matches, List<Delivery> deliveries) {
         ArrayList<Integer> matchIdsOfMatchesIn2016=new ArrayList<>();
         for(Match match:matches){
-            String season=match.getSeason();
-            if(season.equals("2016")){
+            int season=match.getSeason();
+            if((2016) == season){
                 matchIdsOfMatchesIn2016.add(match.getMatchId());
             }
         }
@@ -242,8 +242,8 @@ public class Main {
     private static void findTopEconomicalBowlersIn2015(List<Match> matches, List<Delivery> deliveries) {
         ArrayList<Integer> matchIdsOfMatchesIn2015=new ArrayList<>();
         for(Match match:matches){
-            String season=match.getSeason();
-            if(season.equals("2015")){
+            int season=match.getSeason();
+            if(season==(2015)){
                 //System.out.println(match.getMatchId());
                 matchIdsOfMatchesIn2015.add(match.getMatchId());
             }
@@ -301,14 +301,14 @@ public class Main {
             topEconomicalBowlersIn2015.put(key,economy);
         }
 
-        List<Map.Entry<String,Double>> convertedList=new LinkedList<Map.Entry<String, Double>>(topEconomicalBowlersIn2015.entrySet());
-        Collections.sort(convertedList, new Comparator<Map.Entry<String, Double>>() {
+        List<Map.Entry<String,Double>> topEconomicalBowlersIn2015AfterSorting=new LinkedList<Map.Entry<String, Double>>(topEconomicalBowlersIn2015.entrySet());
+        Collections.sort(topEconomicalBowlersIn2015AfterSorting, new Comparator<Map.Entry<String, Double>>() {
             @Override
             public int compare(Map.Entry<String, Double> o1, Map.Entry<String, Double> o2) {
                 return o1.getValue().compareTo(o2.getValue());
             }
         });
-        System.out.println(topEconomicalBowlersIn2015);
+        System.out.println(topEconomicalBowlersIn2015AfterSorting);
     }
 
     private static void findTotalNumberOfRunsMadeByBatsManInAllSeasons(List<Delivery> deliveries) {
